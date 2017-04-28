@@ -1,0 +1,38 @@
+Project Name: My Elane
+
+
+Package Name: com.myelane
+Class Name: LinkedAccountFrag
+
+Summary:
+	This class shows two kinds of list: Pending user list, Linked user list.
+When someone sends a linked account request to other user it goes to pending user list & once the pending request is confirmed, that row(linked user) switches to the linked user list.
+A user can delete linked user as well by swaping into the list item.
+
+Public Methods:
+	1) View onCreateView  
+		Overridden method of Fragment class.Called to have the fragment instantiate its user interface view. 
+	2) void onActivityCreated
+		Overridden method of Fragment class.Called when the fragment's activity has been created and this fragment's view hierarchy instantiated. 
+
+Inner Classes:
+	1) GetAccountList :
+		 extends AsyncTask
+		 Allows to GetAccountList perform (server call) in background
+. GetAccountList is responsible for fetching linked and pending user list from the server.
+	2) AccountListAdapter:
+		 extends BaseAdpater 
+		 This class is used to generate the linked Account list. 	
+	3) PendingListAdapter
+		 extends BaseAdpater 
+ 		 This class is used to generate the pending request list.
+	4) DeleteTask
+		 extends AsyncTask
+		 This class is used to delete user in background with an API to server.
+	5) ApproveDenyReq
+		 extends AsyncTask
+		 This class is used approve or Deny request of Pending user based on user id
+	 
+
+	
+	
